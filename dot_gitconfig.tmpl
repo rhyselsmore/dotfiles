@@ -1,0 +1,26 @@
+[user]
+  name = Rhys Elsmore
+  email = {{ onepasswordRead "op://x87/GitHub/email" }}
+  signingkey = {{ onepasswordRead "op://x87/SSH Key/public key" }}
+
+[github]
+  user = rhyselsmore
+
+[init]
+  defaultBranch = main
+
+[pull]
+  rebase = true
+
+[core]
+  editor = code --wait
+
+[gpg]
+  format = ssh
+
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+
+[commit]
+  gpgsign = true
+
