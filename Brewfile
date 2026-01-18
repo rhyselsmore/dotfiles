@@ -1,0 +1,10 @@
+brew "git"
+brew "git-delta"
+brew "git-lfs"
+brew "go"
+brew "golang-migrate"
+brew "graphviz"
+brew "jq"
+brew "sqlc"
+
+cask "visual-studio-code"
