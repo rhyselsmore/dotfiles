@@ -46,6 +46,22 @@ else
 fi
 
 #
+# Install 1password
+#
+brew install --cask 1password
+brew install --cask 1password-cli
+
+echo ""
+echo "==> MANUAL STEP REQUIRED:"
+echo "    1. Open 1Password and sign in"
+echo "    2. Go to Settings → Developer"
+echo "    3. Enable 'Connect with 1Password CLI'"
+echo "    4. Run: eval \$(op signin)"
+echo ""
+echo "Press Enter when complete..."
+read -r
+
+#
 # Apply dotfiles with chezmoi
 #
 echo "==> Applying dotfiles..."
