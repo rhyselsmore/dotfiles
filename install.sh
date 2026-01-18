@@ -35,3 +35,18 @@ else
     echo "==> Homebrew already installed"
 fi
 
+#
+# Install chezmoi
+#
+if ! command -v chezmoi &> /dev/null; then
+    echo "==> Installing chezmoi..."
+    brew install chezmoi
+else
+    echo "==> chezmoi already installed"
+fi
+
+#
+# Apply dotfiles with chezmoi
+#
+echo "==> Applying dotfiles..."
+chezmoi init --apply https://github.com/rhyselsmore/dotfiles.git
