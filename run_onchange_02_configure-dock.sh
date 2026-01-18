@@ -1,0 +1,8 @@
+# Clear everything, start fresh
+dockutil --remove all --no-restart
+
+# Add Relevant Icons
+dockutil --add '/System/Applications/System Settings.app' --no-restart
+
+killall Dock
+

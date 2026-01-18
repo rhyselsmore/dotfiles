@@ -50,3 +50,4 @@ fi
 #
 echo "==> Applying dotfiles..."
 chezmoi init --apply https://github.com/rhyselsmore/dotfiles.git
+
