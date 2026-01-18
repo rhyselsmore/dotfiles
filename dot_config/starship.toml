@@ -1,0 +1,56 @@
+# ~/.config/starship.toml (dot_config/starship.toml)
+
+format = """
+[┌─](#9ece6a)$username$hostname$directory$git_branch$git_status
+[└─](#9ece6a)$character"""
+
+[character]
+success_symbol = "[❯](#9ece6a)"
+error_symbol = "[❯](#f7768e)"
+
+[username]
+style_user = "green bold"
+style_root = "red bold"
+format = "[$user]($style) "
+disabled = false
+show_always = true
+
+[hostname]
+ssh_only = false
+format = "on [$hostname](#7aa2f7) "
+disabled = false
+
+[directory]
+style = "#bb9af7"
+format = "in [$path]($style) "
+truncation_length = 3
+truncate_to_repo = true
+
+[git_branch]
+symbol = " "
+format = "on [$symbol$branch]($style) "
+style = "#9ece6a"
+
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style) )'
+style = "#e0af68"
+conflicted = "="
+ahead = "⇡${count}"
+behind = "⇣${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+untracked = "?${count}"
+stashed = "$${count}"
+modified = "!${count}"
+staged = "+${count}"
+renamed = "»${count}"
+deleted = "✘${count}"
+
+[golang]
+format = "via [$symbol($version )]($style)"
+symbol = " "
+
+[nodejs]
+format = "via [$symbol($version )]($style)"
+
+[python]
+format = "via [$symbol($version )]($style)"
