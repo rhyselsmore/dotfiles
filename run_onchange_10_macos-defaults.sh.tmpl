@@ -1,0 +1,33 @@
+#!/bin/bash
+
+echo "==> Configuring macOS defaults..."
+
+# Dock
+defaults write com.apple.dock autohide -bool true
+defaults write com.apple.dock tilesize -int 36
+defaults write com.apple.dock show-recents -bool false
+
+# Finder
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+defaults write com.apple.finder ShowPathbar -bool true
+defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"  # List view
+
+# Keyboard
+defaults write NSGlobalDomain KeyRepeat -int 2
+defaults write NSGlobalDomain InitialKeyRepeat -int 15
+defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+
+# Trackpad
+defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+
+# Screenshots - save to Downloads
+defaults write com.apple.screencapture location -string "${HOME}/Downloads"
+defaults write com.apple.screencapture type -string "png"
+
+# Menu bar - show battery percentage
+defaults write com.apple.menuextra.battery ShowPercent -string "YES"
+
+# Restart affected apps
+killall Dock
+killall Finder
